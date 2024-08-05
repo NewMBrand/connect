@@ -92,5 +92,6 @@ jobs:
           CLUSTER_NAME: ${{ env.CLUSTER_NAME }}
           ECR_REGISTRY: ${{ env.ECR_REGISTRY }}
           ECR_REPO_NAME: ${{ env.ECR_REPO_NAME }}
+          APP_NAME: ${{ env.APP_NAME }}
           ENDPOINT: ${{ env.APP_NAME }}-${{ env.ENV }}.${{ env.DOMAIN_NAME }}
           HELM_VALUES: ${{ env.HELM_VALUES }}
