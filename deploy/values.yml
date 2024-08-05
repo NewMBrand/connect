@@ -49,11 +49,13 @@ externalSecrets:
 
 livenessProbe:
   httpGet:
+    path: /healthz
     port: ${PORT}
   initialDelaySeconds: 5
   periodSeconds: 30
 readinessProbe:
   httpGet:
+    path: /readiness
     port: ${PORT}
   initialDelaySeconds: 5
   periodSeconds: 30
