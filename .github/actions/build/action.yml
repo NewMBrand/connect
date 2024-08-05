@@ -70,3 +70,4 @@ runs:
           VITE_SENTRY_DSN=${{ inputs.VITE_SENTRY_DSN }}
           VITE_SENTRY_ENV=${{ inputs.VITE_SENTRY_ENV }}
           VITE_DEFAULT_DRIVE_URL=https://apps.powerhouse.io/alpha/makerdao/switchboard/d/monetalis
+          PORT=8080

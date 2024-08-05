@@ -44,7 +44,7 @@ inputs:
   PORT:
     description: The port the app listens on
     required: false
-    default: '80'
+    default: '8080'
 
 runs:
   using: composite
