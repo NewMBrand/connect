@@ -93,5 +93,5 @@ jobs:
           ECR_REGISTRY: ${{ env.ECR_REGISTRY }}
           ECR_REPO_NAME: ${{ env.ECR_REPO_NAME }}
           APP_NAME: ${{ env.APP_NAME }}
-          ENDPOINT: ${{ env.APP_NAME }}.${{ env.DOMAIN_NAME }}
+          ENDPOINT: ${{ env.ENV }}-${{ env.APP_NAME }}.${{ env.DOMAIN_NAME }}
           HELM_VALUES: ${{ env.HELM_VALUES }}
