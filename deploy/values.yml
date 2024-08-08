@@ -41,7 +41,7 @@ resources:
     cpu: 1.5
     memory: 1536Mi
   requests:
-    cpu: 250m
+    cpu: 1000m
     memory: 256Mi
 
 externalSecrets:
