@@ -36,6 +36,7 @@ export const useLoadInitialData = () => {
 
     async function checkLatestVersion() {
         const result = await isLatestVersion();
+        if (result === null) return;
         if (!result) {
             toast(<ReloadConnectToast />, {
                 type: 'connect-warning',
@@ -102,6 +103,7 @@ export const useLoadInitialData = () => {
                             ),
                             {
                                 type: 'connect-warning',
+                                toastId: `${drive.syncStatus === CONFLICT ? 'driveSyncConflict' : 'driveSyncError'}-${drive.id}`,
                             },
                         );
                     });
