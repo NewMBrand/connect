@@ -57,8 +57,21 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.STAGING_AWS_REGION }}
+          VITE_ENABLED_EDITORS: ${{ secrets.VITE_ENABLED_EDITORS }}
+          VITE_HIDE_DOCUMENT_MODEL_SELECTION_SETTINGS: true
+          VITE_SEARCH_BAR_ENABLED: false
+          VITE_LOCAL_DRIVES_ENABLED: false
+          VITE_DISABLE_ADD_LOCAL_DRIVES: true
+          VITE_DISABLE_DELETE_LOCAL_DRIVES: true
+          VITE_CLOUD_DRIVES_ENABLED: false
+          VITE_DISABLE_ADD_CLOUD_DRIVES: true
+          VITE_DISABLE_DELETE_CLOUD_DRIVES: true
+          VITE_DISABLE_ADD_PUBLIC_DRIVES: true
+          VITE_DISABLE_DELETE_PUBLIC_DRIVES: true
+          VITE_DEFAULT_DRIVES_URL: ${{ secrets.VITE_DEFAULT_DRIVES_URL }}
+          VITE_RENOWN_URL: ${{ secrets.VITE_RENOWN_URL }}
           VITE_SENTRY_DSN: ${{ secrets.VITE_SENTRY_DSN }}
-          VITE_SENTRY_ENV: ${{ secrets.VITE_SENTRY_ENV }}
+          VITE_SENTRY_ENV: ${{ secrets.STAGING_VITE_SENTRY_ENV }}
           ECR_REGISTRY: ${{ env.ECR_REGISTRY }}
           ECR_REPO_NAME: ${{ env.ECR_REPO_NAME }}
           SHA_TAG: ${{ env.SHA_SHORT }}

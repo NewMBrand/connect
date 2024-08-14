@@ -13,6 +13,58 @@ inputs:
     description: 'The AWS region for the account'
     required: true
     default: ''
+  VITE_ENABLED_EDITORS:
+    description: 'VITE_ENABLED_EDITORS'
+    required: true
+    default: ''
+  VITE_HIDE_DOCUMENT_MODEL_SELECTION_SETTINGS:
+    description: 'VITE_HIDE_DOCUMENT_MODEL_SELECTION_SETTINGS'
+    required: true
+    default: ''
+  VITE_SEARCH_BAR_ENABLED: 
+    description: 'VITE_SEARCH_BAR_ENABLED'
+    required: true
+    default: ''
+  VITE_LOCAL_DRIVES_ENABLED:
+    description: 'VITE_LOCAL_DRIVES_ENABLED'
+    required: true
+    default: ''
+  VITE_DISABLE_ADD_LOCAL_DRIVES:  
+    description: 'VITE_DISABLE_ADD_LOCAL_DRIVES'
+    required: true
+    default: ''
+  VITE_DISABLE_DELETE_LOCAL_DRIVES: 
+    description: 'VITE_DISABLE_DELETE_LOCAL_DRIVES'
+    required: true
+    default: ''
+  VITE_CLOUD_DRIVES_ENABLED: 
+    description: 'VITE_CLOUD_DRIVES_ENABLED'
+    required: true
+    default: ''
+  VITE_DISABLE_ADD_CLOUD_DRIVES: 
+    description: 'VITE_DISABLE_ADD_CLOUD_DRIVES'
+    required: true
+    default: ''
+  VITE_DISABLE_DELETE_CLOUD_DRIVES: 
+    description: 'VITE_DISABLE_DELETE_CLOUD_DRIVES'
+    required: true
+    default: ''
+  VITE_DISABLE_ADD_PUBLIC_DRIVES: 
+    description: 'VITE_DISABLE_ADD_PUBLIC_DRIVES'
+    required: true
+    default: ''
+  VITE_DISABLE_DELETE_PUBLIC_DRIVES:  
+    description: 'VITE_DISABLE_DELETE_PUBLIC_DRIVES'
+    required: true
+    default: ''
+  VITE_DEFAULT_DRIVES_URL: 
+    description: 'VITE_DEFAULT_DRIVES_URL'
+    required: true
+    default: ''
+  VITE_RENOWN_URL: 
+    description: 'VITE_RENOWN_URL'
+    required: true
+    default: ''
   VITE_SENTRY_DSN:
     description: 'VITE_SENTRY_DSN'
     required: true
@@ -67,6 +119,19 @@ runs:
           BASE_PATH=/
           VITE_BASE_HREF=/
           VITE_ROUTER_BASENAME=/
+          VITE_ENABLED_EDITORS=${{ inputs.VITE_ENABLED_EDITORS }}
+          VITE_HIDE_DOCUMENT_MODEL_SELECTION_SETTINGS=${{ inputs.VITE_HIDE_DOCUMENT_MODEL_SELECTION_SETTINGS }}
+          VITE_SEARCH_BAR_ENABLED=${{ inputs.VITE_SEARCH_BAR_ENABLED }}
+          VITE_LOCAL_DRIVES_ENABLED=${{ inputs.VITE_LOCAL_DRIVES_ENABLED }}
+          VITE_DISABLE_ADD_LOCAL_DRIVES=${{ inputs.VITE_DISABLE_ADD_LOCAL_DRIVES }}
+          VITE_DISABLE_DELETE_LOCAL_DRIVES=${{ inputs.VITE_DISABLE_DELETE_LOCAL_DRIVES }}
+          VITE_CLOUD_DRIVES_ENABLED=${{ inputs.VITE_CLOUD_DRIVES_ENABLED }}
+          VITE_DISABLE_ADD_CLOUD_DRIVES=${{ inputs.VITE_DISABLE_ADD_CLOUD_DRIVES }}
+          VITE_DISABLE_DELETE_CLOUD_DRIVES=${{ inputs.VITE_DISABLE_DELETE_CLOUD_DRIVES }}
+          VITE_DISABLE_ADD_PUBLIC_DRIVES=${{ inputs.VITE_DISABLE_ADD_PUBLIC_DRIVES }}
+          VITE_DISABLE_DELETE_PUBLIC_DRIVES=${{ inputs.VITE_DISABLE_DELETE_PUBLIC_DRIVES }}
+          VITE_DEFAULT_DRIVES_URL=${{ inputs.VITE_DEFAULT_DRIVES_URL }}
+          VITE_RENOWN_URL=${{ inputs.VITE_RENOWN_URL }}
           VITE_SENTRY_DSN=${{ inputs.VITE_SENTRY_DSN }}
           VITE_SENTRY_ENV=${{ inputs.VITE_SENTRY_ENV }}
           VITE_DEFAULT_DRIVE_URL=https://apps.powerhouse.io/alpha/makerdao/switchboard/d/monetalis
