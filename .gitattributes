@@ -1,2 +1,2 @@
 # Ignore entire directories
-.github/** merge=ours
+.github/workflows/** merge=ours
