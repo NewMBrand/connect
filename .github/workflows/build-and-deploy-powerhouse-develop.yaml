@@ -1,15 +1,15 @@
-name: Deploy Connect Powerhouse Staging
+name: Deploy Connect Powerhouse Develop
 
 on:
   push:
-    branches: [staging]
+    branches: [develop]
 
 env:
   HUSKY: 0
 
 jobs:
   build:
-    environment: Powerhouse Staging
+    environment: develop
     runs-on: ubuntu-latest
     steps:
       # Check-out your repository.
@@ -23,11 +23,9 @@ jobs:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
           docker_options: >-
-            --build-arg BASE_PATH=/staging/powerhouse/connect
-            --build-arg VITE_BASE_HREF=/staging/powerhouse/connect/
-            --build-arg VITE_ROUTER_BASENAME=/staging/powerhouse/connect
-            --build-arg VITE_SENTRY_DSN=${{ secrets.SENTRY_DSN }}
-            --build-arg VITE_SENTRY_ENV=${{ secrets.SENTRY_ENV }}
-            --build-arg VITE_DEFAULT_DRIVES_URL=https://apps.powerhouse.io/staging/powerhouse/switchboard/d/powerhouse
+            --build-arg BASE_PATH=/develop/powerhouse/connect
+            --build-arg VITE_BASE_HREF=/develop/powerhouse/connect/
+            --build-arg VITE_ROUTER_BASENAME=/develop/powerhouse/connect
+            --build-arg VITE_DEFAULT_DRIVES_URL=https://apps.powerhouse.io/develop/powerhouse/switchboard/d/core-dev
             --build-arg VITE_SEARCH_BAR_ENABLED=false
           process_type: web
