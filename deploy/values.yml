@@ -38,11 +38,11 @@ podAnnotations:
 
 resources:
   limits:
-    cpu: 1.5
-    memory: 1536Mi
+    cpu: 0.1
+    memory: 64m
   requests:
-    cpu: 1000m
-    memory: 256Mi
+    cpu: 0.05
+    memory: 32m
 
 externalSecrets:
   clusterSecretStoreName: ${CLUSTER_NAME}
