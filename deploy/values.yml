@@ -38,10 +38,10 @@ podAnnotations:
 
 resources:
   limits:
-    cpu: 1.5
-    memory: 1536Mi
+    cpu: 750m
+    memory: 512Mi
   requests:
-    cpu: 1000m
+    cpu: 500m
     memory: 256Mi
 
 externalSecrets:
