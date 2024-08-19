@@ -57,8 +57,8 @@ inputs:
     description: 'VITE_DISABLE_DELETE_PUBLIC_DRIVES'
     required: true
     default: ''
-  VITE_DEFAULT_DRIVES_URL: 
-    description: 'VITE_DEFAULT_DRIVES_URL'
+  VITE_DEFAULT_DRIVE_URL:
+    description: 'VITE_DEFAULT_DRIVE_URL'
     required: true
     default: ''
   VITE_RENOWN_URL: 
@@ -130,9 +130,8 @@ runs:
           VITE_DISABLE_DELETE_CLOUD_DRIVES=${{ inputs.VITE_DISABLE_DELETE_CLOUD_DRIVES }}
           VITE_DISABLE_ADD_PUBLIC_DRIVES=${{ inputs.VITE_DISABLE_ADD_PUBLIC_DRIVES }}
           VITE_DISABLE_DELETE_PUBLIC_DRIVES=${{ inputs.VITE_DISABLE_DELETE_PUBLIC_DRIVES }}
-          VITE_DEFAULT_DRIVES_URL=${{ inputs.VITE_DEFAULT_DRIVES_URL }}
+          VITE_DEFAULT_DRIVE_URL=${{ inputs.VITE_DEFAULT_DRIVE_URL }}
           VITE_RENOWN_URL=${{ inputs.VITE_RENOWN_URL }}
           VITE_SENTRY_DSN=${{ inputs.VITE_SENTRY_DSN }}
           VITE_SENTRY_ENV=${{ inputs.VITE_SENTRY_ENV }}
-          VITE_DEFAULT_DRIVE_URL=https://apps.powerhouse.io/alpha/makerdao/switchboard/d/monetalis
           PORT=8080

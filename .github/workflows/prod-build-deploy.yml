@@ -68,7 +68,7 @@ jobs:
           VITE_DISABLE_DELETE_CLOUD_DRIVES: true
           VITE_DISABLE_ADD_PUBLIC_DRIVES: true
           VITE_DISABLE_DELETE_PUBLIC_DRIVES: true
-          VITE_DEFAULT_DRIVES_URL: ${{ secrets.VITE_DEFAULT_DRIVES_URL }}
+          VITE_DEFAULT_DRIVE_URL: ${{ secrets.PROD_VITE_DEFAULT_DRIVE_URL }}
           VITE_RENOWN_URL: ${{ secrets.VITE_RENOWN_URL }}
           VITE_SENTRY_DSN: ${{ secrets.VITE_SENTRY_DSN }}
           VITE_SENTRY_ENV: ${{ secrets.PROD_VITE_SENTRY_ENV }}
