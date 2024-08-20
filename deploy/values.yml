@@ -1,4 +1,4 @@
-replicaCount: 2
+replicaCount: ${REPLICA_COUNT}
 service:
   enabled: true
   name: ${APP_NAME}
@@ -38,11 +38,11 @@ podAnnotations:
 
 resources:
   limits:
-    cpu: 0.5
-    memory: 512Mi
+    cpu: 0.25
+    memory: 256Mi
   requests:
     cpu: 0.1
-    memory: 32Mi
+    memory: 64Mi
 
 externalSecrets:
   clusterSecretStoreName: ${CLUSTER_NAME}
@@ -60,21 +60,9 @@ readinessProbe:
   initialDelaySeconds: 5
   periodSeconds: 30
 
-#labels:
-#  app: ${APP_NAME}
-#selectorLabels:
-#  app: ${APP_NAME}
-#
-#deployment:
-#  enabled: true
-#  ports:
-#    - containerPort: ${PORT}
-#      name: http
-#      protocol: TCP
-
 autoscaling:
-  enabled: false
-  #minReplicas: 1
-  #maxReplicas: 3
-  #targetCPUUtilizationPercentage: 75
-  #targetMemoryUtilizationPercentage: 75
+  enabled: true
+  minReplicas: ${AUTOSCALING_MIN_REPLICAS}
+  maxReplicas: ${AUTOSCALING_MAX_REPLICAS}
+  targetCPUUtilizationPercentage: 75
+  targetMemoryUtilizationPercentage: 75
