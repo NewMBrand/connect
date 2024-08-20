@@ -62,7 +62,7 @@ readinessProbe:
 
 autoscaling:
   enabled: true
-  minReplicas: 2
-  maxReplicas: 3
+  minReplicas: ${AUTOSCALING_MIN_REPLICAS}
+  maxReplicas: ${AUTOSCALING_MAX_REPLICAS}
   targetCPUUtilizationPercentage: 75
   targetMemoryUtilizationPercentage: 75
