@@ -45,6 +45,10 @@ inputs:
     description: The port the app listens on
     required: false
     default: '8080'
+  REPLICA_COUNT:
+    description: 'The number of replicas to run'
+    required: false
+    default: '2'
 
 runs:
   using: composite
@@ -69,6 +73,7 @@ runs:
         HELM_VALUES: ${{ inputs.HELM_VALUES }}
         IMAGE_TAG: ${{ inputs.IMAGE_TAG }}
         PORT: ${{ inputs.PORT }}
+        REPLICA_COUNT: ${{ inputs.REPLICA_COUNT }}
       run: |
         cp $HELM_VALUES temp.yml
         envsubst < temp.yml > $HELM_VALUES

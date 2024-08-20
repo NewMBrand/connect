@@ -1,4 +1,4 @@
-replicaCount: 2
+replicaCount: ${REPLICA_COUNT}
 service:
   enabled: true
   name: ${APP_NAME}
@@ -60,21 +60,9 @@ readinessProbe:
   initialDelaySeconds: 5
   periodSeconds: 30
 
-#labels:
-#  app: ${APP_NAME}
-#selectorLabels:
-#  app: ${APP_NAME}
-#
-#deployment:
-#  enabled: true
-#  ports:
-#    - containerPort: ${PORT}
-#      name: http
-#      protocol: TCP
-
 autoscaling:
-  enabled: false
-  #minReplicas: 1
-  #maxReplicas: 3
-  #targetCPUUtilizationPercentage: 75
-  #targetMemoryUtilizationPercentage: 75
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 75
+  targetMemoryUtilizationPercentage: 75
