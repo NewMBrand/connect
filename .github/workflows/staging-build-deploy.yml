@@ -16,7 +16,6 @@ on:
     branches:
       - deployments/staging/makerdao
 
-
 env:
   APP_NAME: connect
   CLUSTER_NAME: ${{ secrets.STAGING_CLUSTER_NAME }}
