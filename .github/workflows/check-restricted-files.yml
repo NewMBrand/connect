@@ -26,6 +26,13 @@ jobs:
           ALLOWED_FILES=(
             "sync-fork.yml"
             "check-restricted-files.yml"
+            "Dockerfile"
+            ".dockerignore"
+            "staging-build-deploy.yml"
+            "prod-build-deploy.yml"
+            "values.yml"
+            "action.yml"
+            ".gitattributes"
           )
 
           unauthorized_files=""
