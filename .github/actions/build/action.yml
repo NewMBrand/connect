@@ -17,6 +17,10 @@ inputs:
     description: 'VITE_ENABLED_EDITORS'
     required: true
     default: ''
+  VITE_RWA_ALLOW_LIST:
+    description: 'VITE_RWA_ALLOW_LIST'
+    required: true
+    default: ''
   VITE_HIDE_DOCUMENT_MODEL_SELECTION_SETTINGS:
     description: 'VITE_HIDE_DOCUMENT_MODEL_SELECTION_SETTINGS'
     required: true
@@ -120,6 +124,7 @@ runs:
           VITE_BASE_HREF=/
           VITE_ROUTER_BASENAME=/
           VITE_ENABLED_EDITORS=${{ inputs.VITE_ENABLED_EDITORS }}
+          VITE_RWA_ALLOW_LIST=${{ inputs.VITE_RWA_ALLOW_LIST }}
           VITE_HIDE_DOCUMENT_MODEL_SELECTION_SETTINGS=${{ inputs.VITE_HIDE_DOCUMENT_MODEL_SELECTION_SETTINGS }}
           VITE_SEARCH_BAR_ENABLED=${{ inputs.VITE_SEARCH_BAR_ENABLED }}
           VITE_LOCAL_DRIVES_ENABLED=${{ inputs.VITE_LOCAL_DRIVES_ENABLED }}
