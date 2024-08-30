@@ -62,6 +62,9 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.PROD_AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.PROD_AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.PROD_AWS_REGION }}
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
+          SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
           VITE_ENABLED_EDITORS: ${{ secrets.VITE_ENABLED_EDITORS }}
           VITE_RWA_ALLOW_LIST: ${{ secrets.VITE_RWA_ALLOW_LIST }}
           VITE_HIDE_DOCUMENT_MODEL_SELECTION_SETTINGS: true
@@ -116,3 +119,4 @@ jobs:
           HELM_VALUES: ${{ env.HELM_VALUES }}
           IMAGE_TAG: ${{ ( contains(github.event.head_commit.message, '[skip build]') || github.event.inputs.skip_build ) && 'latest' || needs.setup.outputs.short_sha }} # If the build was skipped, use the `latest` image
           AUTOSCALING_MAX_REPLICAS: 4
+          PH_CONNECT_SENTRY_ENV: ${{ vars.PROD_PH_CONNECT_SENTRY_ENV }}
