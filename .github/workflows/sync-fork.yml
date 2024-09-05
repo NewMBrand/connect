@@ -55,7 +55,7 @@ jobs:
             git checkout $BRANCH
             # Check if the latest commit from the upstream is already in the forked repo
             if [ -z "$(git log | grep $UPSTREAM_SHA_SHORT)" ]; then
-              git merge upstream/$BRANCH --no-edit
+              git merge -X theirs upstream/$BRANCH --no-edit
               git push origin $BRANCH
               echo "Branch $BRANCH synced"
             else
@@ -73,6 +73,7 @@ jobs:
             -H 'Content-Type: application/json' \
             -d '{
               "routing_key": "${{ secrets.SYNC_FORK_PD_ROUTING_KEY }}",
+              "dedup_key": "${{ github.repository }}",
               "event_action": "trigger",
               "payload": {
                 "summary": "Sync fork failed for ${{ github.repository }}",
