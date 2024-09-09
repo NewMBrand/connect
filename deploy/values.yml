@@ -44,6 +44,75 @@ resources:
     cpu: 0.1
     memory: 64Mi
 
+env:
+  PH_CONNECT_ROUTER_BASENAME:
+    type: kv
+    value: "/"
+  PH_CONNECT_DISABLE_ADD_PUBLIC_DRIVES:
+    type: kv
+    value: "true"
+  PH_CONNECT_SEARCH_BAR_ENABLED:
+    type: kv
+    value: "false"
+  PH_CONNECT_DISABLE_ADD_CLOUD_DRIVES:
+    type: kv
+    value: "true"
+  PH_CONNECT_DISABLE_ADD_LOCAL_DRIVES:
+    type: kv
+    value: "true"
+  PH_CONNECT_DISABLE_DELETE_PUBLIC_DRIVES:
+    type: kv
+    value: "true"
+  PH_CONNECT_DISABLE_DELETE_CLOUD_DRIVES:
+    type: kv
+    value: "true"
+  PH_CONNECT_DISABLE_DELETE_LOCAL_DRIVES:
+    type: kv
+    value: "true"
+  PH_CONNECT_PUBLIC_DRIVES_ENABLED:
+    type: kv
+    value: "false"
+  PH_CONNECT_CLOUD_DRIVES_ENABLED:
+    type: kv
+    value: "false"
+  PH_CONNECT_LOCAL_DRIVES_ENABLED:
+    type: kv
+    value: "false"
+  PH_CONNECT_HIDE_DOCUMENT_MODEL_SELECTION_SETTINGS:
+    type: kv
+    value: "true"
+  PH_CONNECT_SENTRY_ENV:
+    type: kv
+    value: ${PH_CONNECT_SENTRY_ENV}
+  PH_CONNECT_SENTRY_DSN:
+    type: parameterStore
+    name: ph-connect-sentry-dsn
+    parameter_name: /eks/${CLUSTER_NAME}/${APP_NAME}/ph-connect-sentry-dsn
+  PH_CONNECT_DEFAULT_DRIVES_URL:
+    type: parameterStore
+    name: ph-connect-default-drives-url
+    parameter_name: /eks/${CLUSTER_NAME}/${APP_NAME}/ph-connect-default-drives-url
+  PH_CONNECT_ENABLED_EDITORS:
+    type: parameterStore
+    name: ph-connect-enabled-editors
+    parameter_name: /eks/${CLUSTER_NAME}/${APP_NAME}/ph-connect-enabled-editors
+  PH_CONNECT_RWA_ALLOW_LIST:
+    type: parameterStore
+    name: ph-connect-rwa-allow-list
+    parameter_name: /eks/${CLUSTER_NAME}/${APP_NAME}/ph-connect-rwa-allow-list
+  PH_CONNECT_RENOWN_URL:
+    type: parameterStore
+    name: ph-connect-renown-url
+    parameter_name: /eks/${CLUSTER_NAME}/${APP_NAME}/ph-connect-renown-url
+  PH_CONNECT_RENOWN_NETWORK_ID:
+    type: parameterStore
+    name: ph-connect-renown-network-id
+    parameter_name: /eks/${CLUSTER_NAME}/${APP_NAME}/ph-connect-renown-network-id
+  PH_CONNECT_RENOWN_CHAIN_ID:
+    type: parameterStore
+    name: ph-connect-renown-chain-id
+    parameter_name: /eks/${CLUSTER_NAME}/${APP_NAME}/ph-connect-renown-chain-id
+
 externalSecrets:
   clusterSecretStoreName: ${CLUSTER_NAME}
 

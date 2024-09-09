@@ -13,6 +13,18 @@ inputs:
     description: 'The AWS region for the account'
     required: true
     default: ''
+  SENTRY_AUTH_TOKEN:
+    description: 'SENTRY_AUTH_TOKEN'
+    required: true
+    default: ''
+  SENTRY_ORG:
+    description: 'SENTRY_ORG'
+    required: true
+    default: ''
+  SENTRY_PROJECT:
+    description: 'SENTRY_PROJECT'
+    required: true
+    default: ''
   VITE_ENABLED_EDITORS:
     description: 'VITE_ENABLED_EDITORS'
     required: true
@@ -121,6 +133,11 @@ runs:
         provenance: false
         build-args: |
           BASE_PATH=/
+          BASE_HREF=./
+          PH_CONNECT_APP_REQUIRES_HARD_REFRESH=true
+          SENTRY_AUTH_TOKEN=${{ inputs.SENTRY_AUTH_TOKEN }}
+          SENTRY_ORG=${{ inputs.SENTRY_ORG }}
+          SENTRY_PROJECT=${{ inputs.SENTRY_PROJECT }}
           VITE_BASE_HREF=/
           VITE_ROUTER_BASENAME=/
           VITE_ENABLED_EDITORS=${{ inputs.VITE_ENABLED_EDITORS }}
