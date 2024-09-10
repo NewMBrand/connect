@@ -57,6 +57,10 @@ inputs:
     description: 'The maximum number of replicas to run'
     required: false
     default: '3'
+  PH_CONNECT_SENTRY_ENV:
+    description: 'PH_CONNECT_SENTRY_ENV'
+    required: true
+    default: ''
 
 runs:
   using: composite
@@ -84,6 +88,7 @@ runs:
         REPLICA_COUNT: ${{ inputs.REPLICA_COUNT }}
         AUTOSCALING_MIN_REPLICAS: ${{ inputs.AUTOSCALING_MIN_REPLICAS }}
         AUTOSCALING_MAX_REPLICAS: ${{ inputs.AUTOSCALING_MAX_REPLICAS }}
+        PH_CONNECT_SENTRY_ENV: ${{ inputs.PH_CONNECT_SENTRY_ENV }}
       run: |
         cp $HELM_VALUES temp.yml
         envsubst < temp.yml > $HELM_VALUES
