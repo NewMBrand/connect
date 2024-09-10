@@ -73,6 +73,7 @@ jobs:
             -H 'Content-Type: application/json' \
             -d '{
               "routing_key": "${{ secrets.SYNC_FORK_PD_ROUTING_KEY }}",
+              "dedup_key": "${{ github.repository }}",
               "event_action": "trigger",
               "payload": {
                 "summary": "Sync fork failed for ${{ github.repository }}",
