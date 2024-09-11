@@ -1,0 +1,30 @@
+name: Build and deploy app (staging)
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
+  cancel-in-progress: false
+
+on:
+  workflow_dispatch: # on button click
+    inputs:
+      skip_build:
+        description: 'Skip build?'
+        required: false
+        type: boolean
+        default: false
+
+# This file is a dummy workflow. We need a file with this name to exist on the default branch
+# for us to be able to manually trigger the workflow from the GitHub UI. From there, we can
+# select the branch we actually want.
+
+jobs:
+  dummy:
+    name: Dummy workflow
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Dummy step
+        id: dummy_step
+        shell: bash
+        run: |
+          echo "Dummy step"
