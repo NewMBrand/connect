@@ -71,7 +71,7 @@ env:
     value: "true"
   PH_CONNECT_PUBLIC_DRIVES_ENABLED:
     type: kv
-    value: "false"
+    value: "true"
   PH_CONNECT_CLOUD_DRIVES_ENABLED:
     type: kv
     value: "false"
