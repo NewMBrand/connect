@@ -30,7 +30,7 @@ jobs:
     name: Setup workflow
     runs-on: ubuntu-latest
     outputs:
-      short_sha: ${{ steps.set_outputs.outputs.short_sha }}
+      short_sha: '${{ steps.set_outputs.outputs.short_sha }}'
       skip_build: '${{ steps.set_outputs.outputs.skip_build }}'
 
     steps:
