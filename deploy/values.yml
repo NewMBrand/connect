@@ -38,11 +38,10 @@ podAnnotations:
 
 resources:
   limits:
-    cpu: 0.25
     memory: 256Mi
   requests:
-    cpu: 0.1
-    memory: 64Mi
+    cpu: 1m
+    memory: 10Mi
 
 env:
   PH_CONNECT_ROUTER_BASENAME:
