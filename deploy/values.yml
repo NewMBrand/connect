@@ -26,7 +26,8 @@ ingress:
     external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
 
 httpBasicAuth:
-  enabled: false
+  enabled: true
+  usersList: "${USERS_LIST}"
 
 # If enabled will create Traefik Middleware and apply to Ingress
 # to redirect http to https and www to non-www

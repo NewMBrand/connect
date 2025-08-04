@@ -107,3 +107,4 @@ jobs:
           HELM_VALUES: ${{ env.HELM_VALUES }}
           IMAGE_TAG: ${{ ( needs.setup.outputs.skip_build == 'true' ) && 'latest' || needs.setup.outputs.short_sha }} # If the build was skipped, use the `latest` image
           PH_CONNECT_SENTRY_ENV: ${{ vars.STAGING_PH_CONNECT_SENTRY_ENV }}
+          USERS_LIST: ${{ secrets.STAGING_USERS_LIST }}

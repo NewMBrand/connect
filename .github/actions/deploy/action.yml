@@ -61,6 +61,10 @@ inputs:
     description: 'PH_CONNECT_SENTRY_ENV'
     required: true
     default: ''
+  USERS_LIST:
+    description: 'The list of users to use for HTTP basic auth'
+    required: false
+    default: ''
 
 runs:
   using: composite
@@ -89,6 +93,7 @@ runs:
         AUTOSCALING_MIN_REPLICAS: ${{ inputs.AUTOSCALING_MIN_REPLICAS }}
         AUTOSCALING_MAX_REPLICAS: ${{ inputs.AUTOSCALING_MAX_REPLICAS }}
         PH_CONNECT_SENTRY_ENV: ${{ inputs.PH_CONNECT_SENTRY_ENV }}
+        USERS_LIST: ${{ inputs.USERS_LIST }}
       run: |
         cp $HELM_VALUES temp.yml
         envsubst < temp.yml > $HELM_VALUES
